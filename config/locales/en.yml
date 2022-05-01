@@ -39,6 +39,9 @@ en:
   login_sucessful: Login Successful
   logout_sucessful: Logout Successful
   invalid_email_or_password: Invalid email or password
+  language: Language
+  traditional_chinese: Traditional Chinese
+  english: English
   label_email: Email
   label_password: Password
 

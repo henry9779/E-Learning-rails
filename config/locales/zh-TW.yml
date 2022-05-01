@@ -9,6 +9,9 @@ zh-TW:
   logout_sucessful: 你已登出
   invalid_email_or_password: 電子郵件或密碼錯誤，請重新登入。
   courses: 現有課程
+  language: 語言
+  traditional_chinese: 繁體中文
+  english: 英文
   label_email: 電子郵件
   label_password: 密碼
 
