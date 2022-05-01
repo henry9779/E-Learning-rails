@@ -1,0 +1,26 @@
+AllCops:
+  TargetRubyVersion: 2.7
+  TargetRailsVersion: 5.2
+
+  Exclude:
+    - '**/vendor/**/*'
+    - '**/tmp/**/*'
+    - '**/bin/**/*'
+    - '**/plugins/**/*'
+    - '**/extra/**/*'
+    - '**/lib/generators/**/templates/*'
+    - '**/lib/tasks/**/*'
+    - '**/files/**/*'
+    - 'db/schema.rb'
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always
+  Exclude:
+    - 'db/**/*.rb'
+    - 'Gemfile'
+    - 'Rakefile'
+    - 'config.ru'
+
+Style/Documentation:
+  Enabled: false
