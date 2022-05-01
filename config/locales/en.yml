@@ -30,4 +30,24 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  e_learning: E-Learning
+  hello: Hi, %{name}
+  sign_up: Sign Up
+  log_in: Login
+  log_out: Logout
+  signup_successful: Signup Successful
+  login_sucessful: Login Successful
+  logout_sucessful: Logout Successful
+  invalid_email_or_password: Invalid email or password
+  label_email: Email
+  label_password: Password
+
+  activerecord:
+    attributes:
+      user:
+        first_name: First Name
+        last_name: Last Name
+        email: Email
+        password: Password
+        password_digest: Password
+        password_confirmation: Password Confirmation

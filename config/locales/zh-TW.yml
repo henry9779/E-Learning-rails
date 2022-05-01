@@ -1,0 +1,23 @@
+zh-TW:
+  e_learning: ROR 線上教育
+  hello: 您好，%{name}
+  sign_up: 註冊
+  log_in: 登入
+  log_out: 登出
+  signup_successful: 註冊成功
+  login_sucessful: 登入成功
+  logout_sucessful: 你已登出
+  invalid_email_or_password: 電子郵件或密碼錯誤，請重新登入。
+  courses: 現有課程
+  label_email: 電子郵件
+  label_password: 密碼
+
+  activerecord:
+    attributes:
+      user:
+        first_name: 名字
+        last_name: 姓氏
+        email: 電子郵件
+        password: 密碼
+        password_digest: 密碼
+        password_confirmation: 密碼確認
