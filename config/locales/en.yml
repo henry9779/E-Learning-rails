@@ -44,6 +44,8 @@ en:
   english: English
   label_email: Email
   label_password: Password
+  admin: Admin
+  user_not_allowed: Sorry, You Are Not Allowed to Access This Page
 
   activerecord:
     attributes:
