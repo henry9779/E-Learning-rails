@@ -8,7 +8,7 @@ class RegistrationsController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to root_path, notice: I18n.t(:signup_successful)
+      redirect_to root_path, notice: t('.success')
     else
       render :new
     end

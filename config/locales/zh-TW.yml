@@ -4,20 +4,39 @@ zh-TW:
   sign_up: 註冊
   log_in: 登入
   log_out: 登出
-  signup_successful: 註冊成功
-  login_sucessful: 登入成功
-  logout_sucessful: 您已登出
-  invalid_email_or_password: 電子郵件或密碼錯誤，請重新登入。
   courses: 現有課程
   language: 語言
   traditional_chinese: 繁體中文
   english: 英文
   label_email: 電子郵件
   label_password: 密碼
-  admin: 管理頁面
+  admin_page: 管理頁面
   user_not_allowed: 抱歉，您沒有權限存取頁面。
+  new_course: 新增課程
+
+  registrations:
+    create:
+      success: 註冊成功
+
+  sessions:
+    create:
+      success: 登入成功
+      fail: 電子郵件或密碼錯誤，請重新登入。
+    destroy:
+      success: 您已登出
+
+  admin::courses:
+    create:
+      success: 已新增課程
+    update:
+      success: 已更新課程
+    destroy:
+      success: 已刪除課程
+      fail: 執行有誤，請再試一次。
 
   activerecord:
+    models:
+      course: 課程
     attributes:
       user:
         first_name: 名字
@@ -26,3 +45,14 @@ zh-TW:
         password: 密碼
         password_digest: 密碼
         password_confirmation: 密碼確認
+      course:
+        subject: 標題
+        price: 價格
+        currency: 貨幣
+        category: 類型
+        status: 狀態
+        description: 描述
+        url: 指定網址
+        status:
+          unpublished: 未上架
+          published: 上架中
