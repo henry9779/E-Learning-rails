@@ -1,6 +1,9 @@
 # frozen_string_literal: true
 
 class Course < ApplicationRecord
+  has_many :purchased_courses
+  has_many :users, through: :purchased_courses
+
   enum status: { unpublished: 0, published: 1 }, _prefix: true
   enum currency: { twd: 0, cny: 1, jpy: 2, hkd: 3, usd: 4 }, _prefix: true
   enum category: { chinese: 0, english: 1, math: 2, physics: 3, history: 4 }, _prefix: true
