@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_04_30_081336) do
+ActiveRecord::Schema.define(version: 2022_05_02_084525) do
+
+  create_table "courses", force: :cascade do |t|
+    t.string "subject", null: false
+    t.decimal "price", precision: 8, scale: 2, default: "0.0", null: false
+    t.integer "currency", default: 0, null: false
+    t.integer "category", default: 0, null: false
+    t.integer "status", default: 0, null: false
+    t.string "url"
+    t.text "description", null: false
+    t.integer "valid_day", default: 1, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", null: false
