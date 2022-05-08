@@ -13,6 +13,30 @@ zh-TW:
   admin_page: 管理頁面
   user_not_allowed: 抱歉，您沒有權限存取頁面。
   new_course: 新增課程
+  edit_course: 更新課程
+  show_course: 檢視課程
+  label_edit: 編輯
+  label_delete: 刪除
+  label_back: 回上頁
+  label_day: '%{day} 天'
+
+  course_currency:
+    twd: 新臺幣
+    cny: 人民幣
+    jpy: 日圓
+    hkd: 港幣
+    usd: 美元
+
+  course_category:
+    chinese: 國文
+    english: 英語
+    math: 數學
+    physics: 物理
+    history: 歷史
+
+  course_status:
+    unpublished: 未上架
+    published: 上架中
 
   registrations:
     create:
@@ -25,14 +49,16 @@ zh-TW:
     destroy:
       success: 您已登出
 
-  admin::courses:
-    create:
-      success: 已新增課程
-    update:
-      success: 已更新課程
-    destroy:
-      success: 已刪除課程
-      fail: 執行有誤，請再試一次。
+  admin:
+    courses:
+      create:
+        success: 已新增課程
+      update:
+        success: 已更新課程
+      destroy:
+        success: 已刪除課程
+        fail: 執行有誤，請再試一次。
+        confirm: 確定刪除嗎？
 
   activerecord:
     models:
@@ -46,6 +72,7 @@ zh-TW:
         password_digest: 密碼
         password_confirmation: 密碼確認
       course:
+        id: 課程編號
         subject: 標題
         price: 價格
         currency: 貨幣
@@ -53,6 +80,4 @@ zh-TW:
         status: 狀態
         description: 描述
         url: 指定網址
-        status:
-          unpublished: 未上架
-          published: 上架中
+        valid_day: 效期
