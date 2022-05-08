@@ -1,0 +1,40 @@
+<h2 class='mt-3 mb-3'><%= t('admin_page') %></h2>
+
+<%= link_to t('new_course'), new_admin_course_path, class: 'btn btn-primary' %>
+
+<table class='table table-hover'>
+  <thead>
+    <tr>
+      <td><%= t('activerecord.attributes.course.id') %></td>
+      <td><%= t('activerecord.attributes.course.subject') %></td>
+      <td><%= t('activerecord.attributes.course.category') %></td>
+      <td><%= t('activerecord.attributes.course.status') %></td>
+      <td><%= t('activerecord.attributes.course.valid_day') %></td>
+      <td><%= t('activerecord.attributes.course.currency') %></td>
+      <td><%= t('activerecord.attributes.course.price') %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @courses.each do |course| %>
+        <th scope='row'><%= course.id %></th>
+          <td><%= link_to course.subject, admin_course_path(course) %></td>
+          <td><%= t("course_category.#{course.category}") %></td>
+          <td><%= t("course_status.#{course.status}") %></td>
+          <td><%= t('label_day', day: course.valid_day) %></td>
+          <td><%= t("course_currency.#{course.currency}") %></td>
+          <td><%= course.price.to_f %></td>
+          <td><%= link_to t('label_edit'),
+                          edit_admin_course_path(course),
+                          class: 'btn btn-success' %>
+          </td>
+          <td><%= link_to t('label_delete'),
+                          admin_course_path(course),
+                          method: :delete,
+                          data: { confirm: t('admin.courses.destroy.confirm') },
+                          class: 'btn btn-danger' %>
+          </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

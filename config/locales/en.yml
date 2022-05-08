@@ -1,51 +1,67 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at http://guides.rubyonrails.org/i18n.html.
-
 en:
   e_learning: E-Learning
   hello: Hi, %{name}
   sign_up: Sign Up
   log_in: Login
   log_out: Logout
-  signup_successful: Signup Successful
-  login_sucessful: Login Successful
-  logout_sucessful: Logout Successful
-  invalid_email_or_password: Invalid email or password
+  courses: Courses
   language: Language
   traditional_chinese: Traditional Chinese
   english: English
   label_email: Email
   label_password: Password
+  admin_page: Admin
+  user_not_allowed: Sorry, You Are Not Allowed to Access This Page
+  new_course: New Course
+  edit_course: Edit Course
+  show_course: Show Course
+  label_edit: EDIT
+  label_delete: DELETE
+  label_back: Back
+  label_day: '%{day} day'
+
+  course_currency:
+    twd: TWD
+    cny: CNY
+    jpy: JPY
+    hkd: HKD
+    usd: USD
+
+  course_category:
+    chinese: Chinese
+    english: English
+    math: Math
+    physics: Physics
+    history: History
+
+  course_status:
+    unpublished: Unpublished
+    published: Published
+
+  registrations:
+    create:
+      success: Signup Successful
+
+  sessions:
+    create:
+      success: Login Successful
+      fail: Invalid email or password
+    destroy:
+      success: Logout Successful
+
+  admin:
+    courses:
+      create:
+        success: Course created
+      update:
+        success: Course updated
+      destroy:
+        success: Course deleted
+        fail: Something wrong, try again.
 
   activerecord:
+    models:
+      course: Course
     attributes:
       user:
         first_name: First Name
@@ -54,3 +70,13 @@ en:
         password: Password
         password_digest: Password
         password_confirmation: Password Confirmation
+      course:
+        id: Number
+        subject: Subject
+        price: Price
+        currency: Currency
+        category: Category
+        status: Status
+        description: Description
+        url: URL
+        valid_day: Valid Days
