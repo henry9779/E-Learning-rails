@@ -3,6 +3,9 @@
 class User < ApplicationRecord
   has_secure_password
 
+  has_many :purchased_courses
+  has_many :courses, through: :purchased_courses
+
   validates :first_name, presence: true
   validates :last_name, presence: true
 
