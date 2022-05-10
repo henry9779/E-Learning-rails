@@ -24,5 +24,4 @@ class Course < ApplicationRecord
 
   scope :detail, ->(ids) { where(id: ids) }
   scope :by_category, ->(value) { where(category: value) }
-  scope :by_status, ->(value) { where(status: value) }
 end
