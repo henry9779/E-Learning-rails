@@ -21,4 +21,8 @@ class Course < ApplicationRecord
             numericality: { only_integer: true,
                             greater_than_or_equal_to: 1,
                             less_than_or_equal_to: 31 }
+
+  scope :detail, ->(ids) { where(id: ids) }
+  scope :by_category, ->(value) { where(category: value) }
+  scope :by_status, ->(value) { where(status: value) }
 end
