@@ -19,6 +19,8 @@ zh-TW:
   label_delete: 刪除
   label_back: 回上頁
   label_day: '%{day} 天'
+  my_courses: 我的課程
+  label_expiry_at: 到期日
 
   course_currency:
     twd: 新臺幣

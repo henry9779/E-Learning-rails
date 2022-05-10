@@ -1,0 +1,26 @@
+<table class='table table-hover'>
+  <thead>
+    <tr>
+      <td><%= t('activerecord.attributes.course.id') %></td>
+      <td><%= t('activerecord.attributes.course.subject') %></td>
+      <td><%= t('activerecord.attributes.course.category') %></td>
+      <td><%= t('activerecord.attributes.course.status') %></td>
+      <td><%= t('activerecord.attributes.course.valid_day') %></td>
+      <td><%= t('activerecord.attributes.course.currency') %></td>
+      <td><%= t('activerecord.attributes.course.price') %></td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <% @courses.each do |course| %>
+        <th scope='row'><%= course.id %></th>
+          <td><%= course.subject %></td>
+          <td><%= t("course_category.#{course.category}") %></td>
+          <td><%= t("course_status.#{course.status}") %></td>
+          <td><%= t('label_day', day: course.valid_day) %></td>
+          <td><%= t("course_currency.#{course.currency}") %></td>
+          <td><%= course.price.to_f %></td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

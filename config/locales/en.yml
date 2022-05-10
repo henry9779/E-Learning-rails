@@ -19,6 +19,7 @@ en:
   label_delete: DELETE
   label_back: Back
   label_day: '%{day} day'
+  my_courses: My Courses
 
   course_currency:
     twd: TWD
