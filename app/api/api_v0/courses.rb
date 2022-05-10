@@ -2,25 +2,45 @@
 
 module ApiV0
   class Courses < Grape::API
+    before { authenticate! }
+
+    helpers do
+      def current_user
+        User.find_by(id: params[:user_id])
+      end
+
+      def authenticate!
+        error!('401 Unauthorized', 401) unless current_user
+      end
+    end
+
     resource :courses do
       desc 'Search by category'
       params do
+        requires :user_id, type: Integer, desc: 'User ID.'
         requires :value, type: String, desc: 'Course category.'
       end
       get '/category' do
-        courses = Course.by_category(params[:category])
+        authenticate!
+        user_courses = current_user.purchased_courses
+        course_ids = user_courses.map(&:course_id)
+        cousrses = Course.detail(course_ids)
+        courses_by_category = cousrses.by_category(params[:value])
 
-        present courses, with: ApiV0::Entities::Course
+        present courses_by_category, with: ApiV0::Entities::Course
       end
 
       desc 'Search by status'
       params do
-        requires :value, type: Integer, desc: 'Course status'
+        requires :user_id, type: Integer, desc: 'User ID.'
       end
-      get '/status' do
-        courses = Course.by_status(params[:status])
+      get '/available' do
+        authenticate!
+        user_courses = current_user.purchased_courses.select { |course| course.expiry_at > DateTime.now }
+        course_ids = user_courses.map(&:course_id)
+        available_courses = Course.detail(course_ids)
 
-        present courses, with: ApiV0::Entities::Course
+        present available_courses, with: ApiV0::Entities::Course
       end
     end
   end
