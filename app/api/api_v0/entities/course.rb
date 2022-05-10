@@ -5,6 +5,7 @@ module ApiV0
     class Course < Entities::Base
       expose :subject
       expose :category
+      expose :valid_day
       expose :status
       expose :currency
       expose :price
