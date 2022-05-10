@@ -1,7 +1,11 @@
 <nav class='navbar navbar-expand-lg navbar-light bg-light'>
   <div class='container-fluid'>
     <%= link_to t('e_learning'), root_path, class: 'navbar-brand'%>
-    <%= link_to t('my_courses'), my_courses_path, class: 'nav-link' %>
+    <div class='navbar-nav'>
+      <% if Current.user %>
+        <%= link_to t('my_courses'), my_courses_path, { class: 'nav-link' } %>
+      <% end %>
+    </div>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown">
